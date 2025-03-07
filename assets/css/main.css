@@ -1,0 +1,11 @@
+@import 'primeicons/primeicons.css';
+@import 'color.css';
+@import 'layout.css';
+@import 'transitions.css';
+@import 'type.css';
+@import 'typography.css';
+
+body {
+  background-color: var(--paper);
+  margin: 0;
+}
