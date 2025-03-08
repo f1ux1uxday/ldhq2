@@ -5,15 +5,22 @@
         to="/"
         class="header-link-main"
       >
-        {{ content.site_title }}
+        {{ siteTitle }}
       </NuxtLink>
       <nav class="header-navigation">
         <StoryblokComponent
-          v-for="blok in content.body"
+          v-for="blok in blocks"
           class="nav-item"
           :key="blok._uid"
           :blok="blok"
         />
+
+        <!-- <nav-item -->
+        <!--   v-for="link in links" -->
+        <!--   class="nav-item" -->
+        <!--   :key="link._uid" -->
+        <!--   :link="link" -->
+        <!-- /> -->
       </nav>
     </div>
   </header>
@@ -24,19 +31,19 @@ const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(
   `cdn/stories/navigation`,
   {
-    version: "draft"
+    version: "draft",
   }
 );
 
-const content = data.story.content;
-console.log(data);
+const siteTitle = data.story.content.site_title;
+const blocks = data.story.content.body;
 </script>
 
 <style scoped>
 .header {
   position: sticky;
   top: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   background-color: var(--gray-200);
   z-index: 4;
 }
@@ -52,8 +59,8 @@ console.log(data);
   font-size: 2rem;
 }
 
-.header-link {
-  font-family: "Belanosima";
-  font-size: 1rem;
+.header-navigation {
+  display: flex;
+  gap: 1.5rem;
 }
 </style>

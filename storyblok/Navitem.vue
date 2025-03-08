@@ -4,16 +4,21 @@
     class="nav-item"
   >
     <NuxtLink
-    :to="`/${blok.link.cached_url}`"
+      :to="path"
       class="header-link"
     >
-      {{ blok.label }}
+      {{ props.blok.label }}
     </NuxtLink>
   </div>
 </template>
 
 <script setup>
-defineProps({ blok: Object });
+const props = defineProps({ blok: Object });
+const type = props.blok?.link.linktype;
+
+const path = type === 'url'
+  ? props.blok.link.url
+  : `/${props.blok.link.cached_url}`
 </script>
 
 <style scoped>
