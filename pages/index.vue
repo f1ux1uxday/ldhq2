@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
+const route = useRoute();
 const story = await useStoryblok('home', {version: 'draft'});
-const body = document?.documentElement;
 </script>
  
 

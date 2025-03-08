@@ -5,19 +5,32 @@
         to="/"
         class="header-link-main"
       >
-        LDHQ
+        {{ content.site_title }}
       </NuxtLink>
       <nav class="header-navigation">
-        <NuxtLink
-          to="/about"
-          class="header-link"
-        >
-          About
-        </NuxtLink>
+        <StoryblokComponent
+          v-for="blok in content.body"
+          class="nav-item"
+          :key="blok._uid"
+          :blok="blok"
+        />
       </nav>
     </div>
   </header>
 </template>
+
+<script setup>
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get(
+  `cdn/stories/navigation`,
+  {
+    version: "draft"
+  }
+);
+
+const content = data.story.content;
+console.log(data);
+</script>
 
 <style scoped>
 .header {
