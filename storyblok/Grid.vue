@@ -1,5 +1,5 @@
 <template>
-  <div
+  <layout-container
     v-editable="blok"
     class="grid-container"
   >
@@ -9,7 +9,7 @@
       :key="blok._uid"
       :blok="blok"
     />
-  </div>
+  </layout-container>
 </template>
 
 <script setup>
@@ -22,7 +22,8 @@ defineProps({ blok: Object })
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   @media (min-width: 800px) {
     flex-direction: row;

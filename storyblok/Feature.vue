@@ -27,17 +27,17 @@
 import { useScrollLock } from '@vueuse/core'
 
 const isBodyLocked = useScrollLock(document?.querySelector('body'))
-const showModal = ref(false);
+const showModal = ref(false)
 defineProps({ blok: Object })
 
 const activateModal = () => {
-  showModal.value = true;
-  isBodyLocked.value = true;
+  showModal.value = true
+  isBodyLocked.value = true
 }
 
 const closeModal = () => {
-  showModal.value = false;
-  isBodyLocked.value = false;
+  showModal.value = false
+  isBodyLocked.value = false
 }
 </script>
 
@@ -45,6 +45,7 @@ const closeModal = () => {
 .feature {
   display: flex;
   justify-content: center;
+  width: 33%;
   padding: 2rem 3rem;
   background-color: var(--gray-300);
   box-shadow: 4px 4px 1px var(--gray-200);

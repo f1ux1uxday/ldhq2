@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-const props = defineProps({ blok: Object });
-const type = props.blok?.link.linktype;
+const props = defineProps({ blok: Object })
+const type = props.blok?.link.linktype
 
 const path = type === 'url'
   ? props.blok.link.url

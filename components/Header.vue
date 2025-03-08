@@ -1,28 +1,23 @@
 <template>
   <header class="header">
-    <div class="header-bar">
-      <NuxtLink
-        to="/"
-        class="header-link-main"
-      >
-        {{ siteTitle }}
-      </NuxtLink>
-      <nav class="header-navigation">
-        <StoryblokComponent
-          v-for="blok in blocks"
-          class="nav-item"
-          :key="blok._uid"
-          :blok="blok"
-        />
-
-        <!-- <nav-item -->
-        <!--   v-for="link in links" -->
-        <!--   class="nav-item" -->
-        <!--   :key="link._uid" -->
-        <!--   :link="link" -->
-        <!-- /> -->
-      </nav>
-    </div>
+    <layout-container>
+      <div class="header-bar">
+        <NuxtLink
+          to="/"
+          class="header-link-main"
+        >
+          {{ siteTitle }}
+        </NuxtLink>
+        <nav class="header-navigation">
+          <StoryblokComponent
+            v-for="blok in blocks"
+            class="nav-item"
+            :key="blok._uid"
+            :blok="blok"
+          />
+        </nav>
+      </div>
+    </layout-container>
   </header>
 </template>
 
@@ -43,7 +38,7 @@ const blocks = data.story.content.body;
 .header {
   position: sticky;
   top: 0;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0;
   background-color: var(--gray-200);
   z-index: 4;
 }

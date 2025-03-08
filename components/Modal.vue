@@ -23,16 +23,16 @@ const props = defineProps({ showModal: Boolean })
 
 const escapeHandler = (event) => {
   if (event.keyCode === 27) {
-    emit('close');
+    emit('close')
   }
 }
 
 onMounted(() => {
-  window.addEventListener('keydown', escapeHandler);
+  window.addEventListener('keydown', escapeHandler)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', escapeHandler);
+  window.removeEventListener('keydown', escapeHandler)
 })
 </script>
 

@@ -20,6 +20,7 @@ defineProps({ blok: Object })
   position: relative;
   display: flex;
   justify-content: center;
+  padding-bottom: 2rem;
 }
 
 .teaser-image {

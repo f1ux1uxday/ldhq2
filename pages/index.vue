@@ -3,8 +3,12 @@
 </template>
 
 <script setup>
-const route = useRoute();
-const story = await useStoryblok('home', {version: 'draft'});
+const story = await useStoryblok(
+  'home',
+  {
+    version: 'draft'
+  }
+)
 </script>
  
 

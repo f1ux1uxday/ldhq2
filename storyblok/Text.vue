@@ -1,10 +1,11 @@
 <template>
-  <div
+  <layout-container
     v-editable="blok"
     class="text-block"
+    layout-width="text"
   >
     <StoryblokRichText :doc="blok.content" />
-  </div>
+  </layout-container>
 </template>
 
 <script setup>
@@ -15,7 +16,5 @@ defineProps({ blok: Object })
 .text-block {
   display: flex;
   flex-direction: column;
-  width: var(--text-block-width);
-  padding-left: calc((100vw - var(--text-block-width)) / 2);
 }
 </style>

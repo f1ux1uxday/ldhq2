@@ -3,9 +3,8 @@
 </template>
 
 <script setup>
-const route = useRoute()
 const story = await useStoryblok(
-  route.params.slug,
+  'blog-landing',
   {
     version: 'draft'
   }
