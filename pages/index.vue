@@ -1,5 +1,6 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
+  <advice />
 </template>
 
 <script setup>
@@ -11,8 +12,3 @@ const story = await useStoryblok(
   }
 )
 </script>
- 
-
-<style>
-
-</style>

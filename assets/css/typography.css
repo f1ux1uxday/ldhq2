@@ -9,6 +9,7 @@ h4,
 h5,
 h6 {
   font-family: "Belanosima";
+  font-weight: 500;
   color: var(--gray-200);
 }
 
@@ -24,6 +25,7 @@ h2,
 
 h3,
 .heading-3 {
+  font-family: "Belanosima";
   font-size: 2rem;
 }
 
@@ -31,6 +33,7 @@ h4,
 .heading-4 {
   font-family: "Fraunces";
   font-size: 1.75rem;
+  font-weight: 700;
 }
 
 h5,

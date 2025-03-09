@@ -1,11 +1,12 @@
 <template>
   <main>
-    <Header />
+    <site-header />
     <slot />
     <portal-target
       name="modal-portal"
       multiple
     />
+    <site-footer />
   </main>
 </template>
 
