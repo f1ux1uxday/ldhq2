@@ -3,10 +3,11 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const story = await useStoryblok(
   'blog-landing',
   {
-    version: 'draft'
+    version: config.public.docVersion
   }
 )
 </script>

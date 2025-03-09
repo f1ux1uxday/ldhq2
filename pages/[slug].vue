@@ -3,11 +3,12 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const route = useRoute()
 const story = await useStoryblok(
   route.params.slug,
   {
-    version: 'draft'
+    version: config.public.docVersion
   }
 )
 </script>

@@ -22,11 +22,13 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const storyblokApi = useStoryblokApi();
+
 const { data } = await storyblokApi.get(
   `cdn/stories/navigation`,
   {
-    version: "draft",
+    version: config.public.docVersion,
   }
 );
 

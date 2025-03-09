@@ -9,9 +9,14 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
   storyblok: {
-    accessToken: '1qEFowQCdaW2V0L6Qe4doAtt',
+    accessToken: process.env.NUXT_STORYBLOK_ACCESS_TOKEN,
     apiOptions: {
       region: 'us'
     },
+  },
+  runtimeConfig:{
+    public: {
+      docVersion: process.env.DOC_VERSION
+    }
   }
 })
