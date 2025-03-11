@@ -6,38 +6,22 @@
         {{ story.content.disclaimer }}
       </p>
       <div class="blog-card-container">
-        <NuxtLink
+        <blog-card
           v-for="entry, index in entries"
           :key="`entry-${index}`"
-          :to="entry.full_slug"
-          class="blog-card"
-        >
-          <NuxtImg
-            v-if="memes"
-            :src="memes[index].preview[2]"
-            class="blog-thumbnail"
-          />
-          <div class="blog-details">
-            <h3 class="blog-title heading-5">
-              {{ entry.content.title }}
-            </h3>
-            <span class="blog-publish-date">
-              {{ blogDate(entry.first_published_at) }}
-            </span>
-          </div>
-        </NuxtLink>
+          :entry="entry"
+          :meme="memes[index]"
+        />
       </div>
     </div>
   </layout-container>
 </template>
 
 <script setup>
-import {NuxtImg} from '#components';
-
 const config = useRuntimeConfig();
 const storyblokApi = useStoryblokApi();
 const story = await useStoryblok(
-  'blog-landing',
+  'blog',
   {
     version: config.public.docVersion
   }
@@ -51,19 +35,6 @@ const entries = await storyblokApi.getAll(
     sort_by: 'first_published_at:desc'
   }
 )
-
-const blogDate = date => {
-  const rawDate = new Date(date);
-
-  const dateString = rawDate.toLocaleDateString('en-US', {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
-
-  return dateString;
-}
 
 const { data } = await useFetch(`https://meme-api.com/gimme/${entries?.length}`)
 const memes = data?.value.memes;
@@ -88,51 +59,5 @@ const memes = data?.value.memes;
   column-gap: 2rem;
   row-gap: 2rem;
   max-width: var(--content-width);
-}
-
-.blog-card {
-  display: flex;
-  width: calc(var(--width) - 1.5rem);
-  flex-direction: column;
-  background-color: var(--gray-200);
-  border: 2px solid var(--gray-300);
-  border-radius: 0.25rem;
-  box-shadow: 0px 0px 0px var(--gray-300);
-  transition: all 0.3s ease-out;
-
-  &:hover {
-    background-color: var(--gray-700);
-    box-shadow: 4px 4px 4px var(--gray-300);
-
-    .blog-title {
-      color: var(--gray-300);
-    }
-
-    .blog-publish-date {
-      color: var(--gray-200);
-    }
-  }
-
-  .blog-thumbnail {
-    height: 300px;
-    object-fit: cover;
-    filter: sepia(0.6) blur(3px) brightness(75%);
-    border-radius: 0.25rem 0.25rem 0 0;
-  }
-
-  .blog-details {
-    padding: 1rem 2rem;
-  }
-
-  .blog-title {
-    margin-bottom: 0.5rem;
-    color: var(--gray-800);
-  }
-
-  .blog-publish-date {
-    font-family: "Belanosima";
-    font-size: 14px;
-    color: var(--gray-600);
-  }
 }
 </style>
