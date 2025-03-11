@@ -5,19 +5,16 @@
     </layout-container>
     <div v-editable="blok">
       <StoryblokComponent
-        v-for="blok in blok.blocks"
-        :key="blok._uid"
-        :blok="blok"
+        v-for="block in blok.blocks"
+        :key="block._uid"
+        :blok="block"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
-  blok: Object,
-  story: Object
-})
+defineProps({blok: Object})
 </script>
 
 <style scoped>

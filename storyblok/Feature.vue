@@ -47,8 +47,8 @@ const closeModal = () => {
   justify-content: center;
   width: 33%;
   padding: 2rem 3rem;
-  background-color: var(--gray-300);
-  box-shadow: 4px 4px 1px var(--gray-200);
+  background-color: var(--gray-400);
+  box-shadow: 3px 3px 2px var(--gray-300);
   border-radius: 0.25rem;
   border: none;
   transition: all 0.3s ease-out;
@@ -60,7 +60,7 @@ const closeModal = () => {
 
   &:hover {
     background-color: var(--gray-700);
-    box-shadow: 6px 6px 1px var(--gray-200);
+    box-shadow: 6px 6px 4px var(--gray-300);
 
     .feature-text {
       color: var(--gray-300);
