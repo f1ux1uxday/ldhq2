@@ -1,9 +1,9 @@
 <template>
   <div v-editable="blok">
     <StoryblokComponent
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
+      v-for="block in blok.body"
+      :key="block._uid"
+      :blok="block"
     />
   </div>
 </template>

@@ -1,23 +1,26 @@
 <template>
-  <!-- <div>Hello Blog</div> -->
   <StoryblokComponent
     v-if="blocks"
-    :story="story"
+    :story="story.value"
     :blok="blocks"
   />
 </template>
 
 <script setup>
 const config = useRuntimeConfig();
-const storyblokApi = useStoryblokApi();
 const route = useRoute()
-
-const { data } = await storyblokApi.get(
-  `cdn/stories/blog/${route.params.slug}`,
+const story = await useAsyncStoryblok(
+  `blog/${route.params.slug}`,
   {
-    version: config.public.docVersion,
+    version: config.public.docVersion
   }
-);
-const story = data.story
-const blocks = story.content
+)
+const blocks = story.value.content
+
+if (story.value.status) {
+  throw createError({
+    statusCode: story.value.status,
+    statusMessage: story.value.response
+  });
+}
 </script>

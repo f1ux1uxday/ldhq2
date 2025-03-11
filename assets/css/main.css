@@ -5,6 +5,10 @@
 @import 'type.css';
 @import 'typography.css';
 
+html {
+  background-color: var(--gray-200);
+}
+
 body {
   background-color: var(--paper);
   margin: 0;
