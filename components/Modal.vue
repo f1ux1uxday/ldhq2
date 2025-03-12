@@ -61,6 +61,7 @@ onUnmounted(() => {
   width: 100vw;
   height: 100vh;
   z-index: 5;
+  background-color: rgba(33, 33, 33, 0.33);
 }
 
 .modal-close {
@@ -90,11 +91,12 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   height: fit-content;
-  max-width: 75%;
-  padding: 2rem;
-  background-color: var(--gray-800);
-  border-radius: 0.25rem;
+  max-width: 100%;
   color: var(--gray-600);
   z-index: 10;
+
+  @media (min-width: 820px) {
+    max-width: 80%;
+  }
 }
 </style>

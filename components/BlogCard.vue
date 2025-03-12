@@ -42,8 +42,8 @@ const blogDate = computed(() => {
 <style scoped>
 .blog-card {
   display: flex;
-  width: calc(var(--width) - 1.5rem);
   flex-direction: column;
+  width: 100%;
   background-color: var(--gray-200);
   border: 2px solid var(--gray-300);
   border-radius: 0.25rem;

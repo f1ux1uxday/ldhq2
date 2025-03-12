@@ -5,7 +5,10 @@
         Lucas Dayton
       </div>
       <div class="footer-links">
-        <a href="mailto:self@lucasdayton.com">
+        <a
+          class="footer-link"
+          href="mailto:self@lucasdayton.com"
+        >
           self@lucasdayton.com
         </a>
       </div>
@@ -37,12 +40,23 @@ const blocks = data.story.content.body;
 
   .footer-container {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+
+    @media (min-width: 720px) {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
   }
 
   .footer-heading {
     color: var(--gray-700);
+  }
+
+  .footer-link {
+    font-family: "Fraunces";
   }
 }
 </style>

@@ -44,11 +44,15 @@ const borderColor = props.blok.color
 
 .teaser-overlay {
   position: absolute;
-  padding: 2rem;
+  padding: 0.5rem;
   background-color: transparent;
   border: 3px solid var(--coral);
   border-radius: 0.5rem;
   filter: blur(1px);
+
+  @media (min-width: 1020px) {
+    padding: 2rem;
+  }
 
   &.sea {
     border-color: var(--sea);
