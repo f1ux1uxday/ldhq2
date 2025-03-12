@@ -23,4 +23,12 @@ if (story.value.status) {
     statusMessage: story.value.response
   });
 }
+
+// Can inject a script in here as well - Commento?
+useHead({
+  title: `${story.value.content.title} - LDHQ`,
+  meta: [
+    { name: 'description', content: `${story.value.content.title} - LDHQ` }
+  ],
+})
 </script>

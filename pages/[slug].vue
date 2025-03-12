@@ -11,4 +11,13 @@ const story = await useStoryblok(
     version: config.public.docVersion
   }
 )
+
+// Add page title to type
+// Pull in site name from 'Settings' equivalent?
+useHead({
+  title: `${route.params.slug} - LDHQ`,
+  meta: [
+    { name: 'description', content: `${route.params.slug} - LDHQ` }
+  ],
+})
 </script>
