@@ -30,7 +30,7 @@ const story = await useStoryblok(
 const entries = await storyblokApi.getAll(
   `cdn/stories`,
   {
-    version: 'draft',
+    version: config.public.docVersion,
     content_type: 'blog',
     sort_by: 'first_published_at:desc'
   }
