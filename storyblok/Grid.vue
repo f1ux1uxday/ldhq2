@@ -21,12 +21,14 @@ defineProps({ blok: Object })
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  @media (min-width: 800px) {
+  @media (min-width: 750px) {
     flex-direction: row;
+    gap: 2rem;
   }
 }
 </style>

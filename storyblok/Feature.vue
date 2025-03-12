@@ -45,14 +45,23 @@ const closeModal = () => {
 .feature {
   display: flex;
   justify-content: center;
-  width: 33%;
-  padding: 2rem 3rem;
+  width: 75%;
+  padding: 1rem;
   background-color: var(--gray-400);
   box-shadow: 3px 3px 2px var(--gray-300);
   border-radius: 0.25rem;
   border: none;
   transition: all 0.3s ease-out;
   cursor: pointer;
+
+  @media (min-width: 750px) {
+    width: 33%;
+    padding: 1rem 2rem;
+  }
+
+  @media (min-width: 1500px) {
+    padding: 2rem 3rem;
+  }
 
   .feature-text {
     color: var(--gray-800);

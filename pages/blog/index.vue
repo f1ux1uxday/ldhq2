@@ -52,12 +52,17 @@ const memes = data?.value.memes;
 }
 
 .blog-card-container {
-  --width: calc((var(--content-width) / 3));
   display: grid;
-  /*grid-template-columns: var(--width) var(--width) var(--width);*/
-  grid-template-columns: auto auto auto;
-  column-gap: 2rem;
-  row-gap: 2rem;
-  max-width: var(--content-width);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+
+  @media (min-width: 1020px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1500px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: var(--content-width);
+  }
 }
 </style>

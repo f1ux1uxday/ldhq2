@@ -1,4 +1,6 @@
 :root {
-  --content-width: 1440px;
   --text-block-width: 720px;
+  --content-width: 1440px;
+  --mobile-gutter: 1rem;
+  --tablet-gutter: 2rem;
 }

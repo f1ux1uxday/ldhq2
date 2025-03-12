@@ -18,14 +18,29 @@ defineProps({
 
 <style scoped>
 .container-content {
-  max-width: var(--content-width);
-  padding-left: calc((100vw - var(--content-width)) / 2);
-  padding-right: calc((100vw - var(--content-width)) / 2);
+  padding-left: var(--mobile-gutter);
+  padding-right: var(--mobile-gutter);
+
+  @media (min-width: 1020px) {
+    padding-left: var(--tablet-gutter);
+    padding-right: var(--tablet-gutter);
+  }
+
+  @media (min-width: 1500px) {
+    max-width: var(--content-width);
+    padding-left: calc((100vw - var(--content-width)) / 2);
+    padding-right: calc((100vw - var(--content-width)) / 2);
+  }
 }
 
 .container-text {
-  max-width: var(--text-block-width);
-  padding-left: calc((100vw - var(--text-block-width)) / 2);
-  padding-right: calc((100vw - var(--text-block-width)) / 2);
+  padding-left: calc(var(--mobile-gutter) * 2);
+  padding-right: calc(var(--mobile-gutter) * 2);
+
+  @media (min-width: 800px) {
+    max-width: var(--text-block-width);
+    padding-left: calc((100vw - var(--text-block-width)) / 2);
+    padding-right: calc((100vw - var(--text-block-width)) / 2);
+  }
 }
 </style>
