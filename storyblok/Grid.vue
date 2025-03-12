@@ -26,7 +26,7 @@ defineProps({ blok: Object })
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  @media (min-width: 750px) {
+  @media (min-width: 820px) {
     flex-direction: row;
     gap: 2rem;
   }

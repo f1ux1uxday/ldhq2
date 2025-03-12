@@ -48,7 +48,17 @@ const memes = data?.value.memes;
 .blog-disclaimer {
   padding-bottom: 2rem;
   color: var(--coral);
-  text-align: right;
+  text-align: left;
+  font-size: 12px;
+
+  @media (min-width: 830px) {
+    font-size: 0.875rem;
+    text-align: right;
+  }
+
+  @media (min-width: 1020px) {
+    font-size: 1rem;
+  }
 }
 
 .blog-card-container {

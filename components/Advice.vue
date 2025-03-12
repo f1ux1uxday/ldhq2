@@ -28,6 +28,6 @@ const advice = JSON.parse(response.data._value).slip.advice
 .advice-content {
   padding: 1.5rem 3rem;
   border: 3px solid var(--coral);
-  border-radius: 4px;
+  border-radius: 0.5rem;
 }
 </style>
