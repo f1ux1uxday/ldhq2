@@ -39,12 +39,13 @@ const entries = await storyblokApi.getAll(
 const { data } = await useFetch(`https://meme-api.com/gimme/${entries?.length}`)
 const memes = data?.value.memes;
 
-// Add page title to type
-// Pull in site name from 'Settings' equivalent?
+const { getLabel } = await useLabels()
+const seoTitle = `${story.value.content.title} - ${getLabel('siteName')}`
+
 useHead({
-  title: 'Pointless Ramblings? - LDHQ',
+  title: seoTitle,
   meta: [
-    { name: 'description', content: 'Pointless Ramblings - LDHQ' }
+    { name: 'description', content: seoTitle }
   ],
 })
 </script>
