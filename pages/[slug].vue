@@ -5,6 +5,7 @@
 <script setup>
 const config = useRuntimeConfig();
 const route = useRoute()
+// const storyblokApi = useStoryblokApi()
 const story = await useStoryblok(
   route.params.slug,
   {
@@ -12,12 +13,20 @@ const story = await useStoryblok(
   }
 )
 
+const { labels, getLabel } = useLabels()
+console.log('lv: ', labels?.datasource_entries);
+// const seoTitle = `${route.params.slug} - ${getLabel('siteName')}`
+const seoTitle = `${route.params.slug} - LDHQ`
+
 // Add page title to type
 // Pull in site name from 'Settings' equivalent?
 useHead({
-  title: `${route.params.slug} - LDHQ`,
+  title: seoTitle,
   meta: [
-    { name: 'description', content: `${route.params.slug} - LDHQ` }
+    {
+      name: 'description',
+      content: seoTitle
+    }
   ],
 })
 </script>
