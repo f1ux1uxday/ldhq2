@@ -15,6 +15,12 @@
         :blok="block"
       />
     </div>
+    <spacer />
+    <layout-container
+      class="comments"
+    >
+      <div id="commento"></div>
+    </layout-container>
   </div>
 </template>
 

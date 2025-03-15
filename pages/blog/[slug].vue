@@ -24,5 +24,11 @@ useHead({
   meta: [
     { name: 'description', content: seoTitle }
   ],
+  script: [
+    {
+      src: 'https://cdn.commento.io/js/commento.js',
+      defer: true
+    }
+  ]
 })
 </script>
