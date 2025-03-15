@@ -1,0 +1,135 @@
+.commento-avatar {
+  font-family: "Belanosima";
+}
+
+.commento-name,
+.commento-card .commento-name {
+  font-family: 'Belanosima';
+  font-weight: 600;
+}
+
+.commento-profile-button {
+  font-family: 'Belanosima';
+}
+
+.commento-mod-tools {
+  &::before,
+  #commento-mod-tools-lock-button {
+    font-family: 'Belanosima';
+    font-weight: 400;
+  }
+}
+
+.commento-profile-button {
+  color: var(--gray-400);
+}
+
+.commento-textarea-container-root {
+  padding: 0 0.5rem;
+}
+
+textarea {
+  font-family: "Space Mono";
+  font-size: .75rem;
+  background-color: var(--gray-900);
+  color: var(--gray-200);
+  border: 2px solid var(--sea);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 var(--gray-300);
+  transition: all ease-in-out;
+
+  &:focus {
+    box-shadow: 3px 3px 1px var(--gray-300);
+  }
+}
+
+.commento-markdown-button {
+  font-family: 'Space Mono';
+  color: var(--coral);
+  margin: 0;
+}
+
+.commento-markdown-help {
+  border-color: var(--gray-600);
+  border-radius: 0.25rem;
+
+  tr td,
+  tr td i,
+  tr td pre,
+  tr td b,
+  tr td strike,
+  tr td blockquote {
+    font-family: "Space Mono";
+    font-size: 12px;
+  }
+}
+
+.commento-anonymous-checkbox-container input[type="checkbox"] + label {
+  font-family: "Belanosima";
+  font-weight: 500;
+}
+
+.commento-round-check input[type="checkbox"]:checked + label::before,
+.commento-round-check input[type="radio"]:checked + label::before {
+  background: var(--sea);
+  border-color: var(--sea);
+}
+
+.commento-sort-policy-button {
+  font-family: "Belanosima";
+  color: var(--gray-400);
+
+  &-selected {
+    color: var(--sea);
+  }
+}
+
+.commento-comment-card {
+  padding: 0.75rem 0 0 0.5rem;
+  border-left: none !important;
+
+  &:nth-of-type(odd) {
+    border-top: 1px solid var(--sea);
+  }
+
+  &:nth-of-type(odd) {
+    border-top: 1px solid var(--coral);
+  }
+
+  .commento-score {
+    font-family: "Belanosima";
+    font-weight: 500;
+  }
+
+  .commento-timeago {
+    font-family: "Belanosima";
+    font-weight: 500;
+  }
+
+  .commento-option-button {
+    background-color: var(--sea);
+
+    &.commento-option-remove {
+      background-color: var(--coral);
+    }
+  }
+
+  .commento-body * {
+    font-family: "Space Mono";
+    color: var(--gray-200);
+  }
+}
+
+.commento-button {
+  font-family: "Belanosima";
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--coral);
+}
+
+.commento-logo {
+  .commento-logo-text {
+    font-family: "Belanosima";
+    font-size: 10px;
+  }
+}

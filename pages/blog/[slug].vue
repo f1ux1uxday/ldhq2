@@ -27,7 +27,8 @@ useHead({
   script: [
     {
       src: 'https://cdn.commento.io/js/commento.js',
-      defer: true
+      defer: true,
+      'data-no-fonts': true
     }
   ]
 })
