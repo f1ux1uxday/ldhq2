@@ -38,6 +38,16 @@ const entries = await storyblokApi.getAll(
 
 const { data } = await useFetch(`https://meme-api.com/gimme/${entries?.length}`)
 const memes = data?.value.memes;
+
+const { getLabel } = await useLabels()
+const seoTitle = `${story.value.content.title} - ${getLabel('siteName')}`
+
+useHead({
+  title: seoTitle,
+  meta: [
+    { name: 'description', content: seoTitle }
+  ],
+})
 </script>
 
 <style scoped>

@@ -1,8 +1,7 @@
 <template>
   <StoryblokComponent
-    v-if="blocks"
-    :story="story.value"
-    :blok="blocks"
+    v-if="story"
+    :blok="story.content"
   />
 </template>
 
@@ -15,12 +14,15 @@ const story = await useAsyncStoryblok(
     version: config.public.docVersion
   }
 )
-const blocks = story.value.content
 
-if (story.value.status) {
-  throw createError({
-    statusCode: story.value.status,
-    statusMessage: story.value.response
-  });
-}
+const { getLabel } = await useLabels()
+const seoTitle = `${story.value.content.title} - ${getLabel('siteName')}`
+
+// Can inject a script in here as well - Commento?
+useHead({
+  title: seoTitle,
+  meta: [
+    { name: 'description', content: seoTitle }
+  ],
+})
 </script>

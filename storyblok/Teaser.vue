@@ -20,13 +20,10 @@
  
 <script setup>
 const props = defineProps({
-  blok: Object,
-  color: String
+  blok: Object
 })
 
 const borderColor = props.blok.color
-  ? props.blok.color
-  : props.color
 </script>
 
 <style scoped>

@@ -5,7 +5,7 @@
   >
     <NuxtImg
       v-if="props.meme"
-      :src="props.meme.preview[2]"
+      :src="props.meme.preview[2] || props.meme.preview[1]"
       class="blog-thumbnail"
     />
     <div class="blog-details">

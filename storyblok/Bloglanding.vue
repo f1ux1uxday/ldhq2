@@ -11,7 +11,6 @@
 
 <script setup>
 defineProps({
-  blok: Object,
-  color: String
+  blok: Object
 })
 </script>

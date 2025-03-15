@@ -1,5 +1,8 @@
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+  <StoryblokComponent
+    v-if="story"
+    :blok="story.content"
+  />
 </template>
 
 <script setup>
@@ -11,4 +14,17 @@ const story = await useStoryblok(
     version: config.public.docVersion
   }
 )
+
+const { getLabel } = await useLabels()
+const seoTitle = `${story.value.content.title} - ${getLabel('siteName')}`
+
+useHead({
+  title: seoTitle,
+  meta: [
+    {
+      name: 'description',
+      content: seoTitle
+    }
+  ],
+})
 </script>
