@@ -28,7 +28,8 @@ useHead({
     {
       src: 'https://cdn.commento.io/js/commento.js',
       defer: true,
-      'data-no-fonts': true
+      'data-no-fonts': true,
+      'data-css-override': 'https://ld-hq.com/ldhq-commento.css'
     }
   ]
 })
