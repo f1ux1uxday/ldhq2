@@ -41,7 +41,9 @@ const blocks = data.story.content.body;
   position: sticky;
   top: 0;
   padding: 0.5rem 0;
-  background-color: var(--gray-200);
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--gray-200);
   z-index: 4;
 }
 
@@ -52,6 +54,10 @@ const blocks = data.story.content.body;
 }
 
 .header-link-main {
+  padding: 2px 6px;
+  background-color: var(--sea);
+  border-radius: 0.25rem;
+  color: var(--paper);
   font-family: "Belanosima";
   font-size: 2rem;
 }
@@ -59,5 +65,9 @@ const blocks = data.story.content.body;
 .header-navigation {
   display: flex;
   gap: 1.5rem;
+  padding: 0.25rem 1.5rem;
+  background-color: var(--paper);
+  border: 2px solid var(--gray-200);
+  border-radius: 0.75rem;
 }
 </style>

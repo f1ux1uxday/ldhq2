@@ -79,6 +79,6 @@ a {
 
 p {
   font-family: "Space Mono";
-  margin: 0;
+  font-size: 14px;
   color: var(--gray-200);
 }

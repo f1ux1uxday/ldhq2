@@ -25,5 +25,6 @@ const path = type === 'url'
 .header-link {
   font-family: "Belanosima";
   font-size: 1rem;
+  color: var(--coral);
 }
 </style>

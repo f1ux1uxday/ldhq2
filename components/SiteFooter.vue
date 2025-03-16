@@ -36,7 +36,7 @@ const blocks = data.story.content.body;
 <style scoped>
 .footer {
   padding: 2rem 0;
-  background-color: var(--gray-200);
+  background-color: var(--gray-100);
 
   .footer-container {
     display: flex;

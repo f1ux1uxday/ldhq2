@@ -71,14 +71,19 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1.5rem;
-  width: 1.5rem;
-  border: none;
-  border-radius: 50%;
-  background-color: var(--gray-800);
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 0.25rem;
+  background-color: var(--gray-100);
   color: var(--coral);
   cursor: pointer;
   z-index: 10;
+
+  @media (min-width: 1020px) {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
 
   i:before {
     font-size: 1rem;
@@ -96,6 +101,7 @@ onUnmounted(() => {
   z-index: 10;
 
   @media (min-width: 820px) {
+    width: 80%;
     max-width: 80%;
   }
 }
