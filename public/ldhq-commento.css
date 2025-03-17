@@ -18,11 +18,12 @@
     font-family: 'Belanosima';
   }
 
-  .commento-mod-tools {
-    &::before,
-    #commento-mod-tools-lock-button {
-      font-family: 'Belanosima';
-      font-weight: 400;
+  .commento-mod-tools * {
+    font-family: 'Belanosima';
+    font-weight: 400;
+
+    &::before {
+      color: var(--sea);
     }
   }
 
@@ -39,7 +40,7 @@
     font-size: .75rem;
     background-color: var(--gray-900);
     color: var(--gray-200);
-    border: 2px solid var(--sea);
+    border: 2px solid var(--gray-900);
     border-radius: 0.25rem;
     box-shadow: 0 0 0 var(--gray-300);
     transition: all ease-in-out;
@@ -47,6 +48,7 @@
     &:focus,
     &:hover {
       box-shadow: 3px 3px 1px var(--gray-300);
+      border-color: var(--sea);
     }
   }
 
