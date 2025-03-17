@@ -51,7 +51,7 @@ const closeModal = () => {
   box-shadow: 3px 3px 2px var(--gray-300);
   border-radius: 0.25rem;
   border: none;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in;
   cursor: pointer;
 
   @media (min-width: 820px) {
@@ -70,9 +70,10 @@ const closeModal = () => {
   &:hover {
     background-color: var(--gray-700);
     box-shadow: 6px 6px 4px var(--gray-300);
+    letter-spacing: 0.1em;
 
     .feature-text {
-      color: var(--gray-300);
+      color: var(--gray-200);
     }
   }
 }
@@ -80,7 +81,7 @@ const closeModal = () => {
 .feature-image {
   width: 100%;
   filter: sepia(0.75);
-  border-radius: 1rem;
+  border-radius: 8px;
 }
 
 .feature-emoji {

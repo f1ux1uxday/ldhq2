@@ -52,11 +52,21 @@ const blocks = data.story.content.body;
   }
 
   .footer-heading {
-    color: var(--gray-700);
+    color: var(--coral);
   }
 
   .footer-link {
     font-family: "Fraunces";
+    color: var(--paper);
+    padding: 0.25rem 1.5rem 6px;
+    background-color: var(--sea);
+    border: 2px solid var(--paper);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s ease-in;
+
+    &:hover {
+      border-color: var(--coral);
+    }
   }
 }
 </style>

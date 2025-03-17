@@ -78,11 +78,16 @@ onUnmounted(() => {
   background-color: var(--gray-100);
   color: var(--coral);
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
   z-index: 10;
 
   @media (min-width: 1020px) {
     top: 1.5rem;
     right: 1.5rem;
+  }
+
+  &:hover {
+    border-color: var(--coral);
   }
 
   i:before {
