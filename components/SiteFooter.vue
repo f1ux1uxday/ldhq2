@@ -17,37 +17,28 @@
 </template>
 
 <script setup>
-/*
-const config = useRuntimeConfig();
-const storyblokApi = useStoryblokApi();
-
-const { data } = await storyblokApi.get(
-  `cdn/stories/navigation`,
-  {
-    version: config.public.docVersion,
-  }
-);
-
-const siteTitle = data.story.content.site_title;
-const blocks = data.story.content.body;
-*/
 </script>
 
 <style scoped>
 .footer {
-  padding: 2rem 0;
+  padding: 1rem 0;
   background-color: var(--gray-100);
+
+  @media (min-width: 720px) {
+    padding: 2rem 0;
+  }
 
   .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 0.5rem;
+    row-gap: 1rem;
 
     @media (min-width: 720px) {
       flex-direction: row;
       align-items: baseline;
       justify-content: space-between;
+      row-gap: 0.5rem;
     }
   }
 
@@ -55,17 +46,26 @@ const blocks = data.story.content.body;
     color: var(--coral);
   }
 
+  .footer-links {
+    padding-bottom: 0.5rem;
+
+    @media (min-width: 720px) {
+      padding-bottom: 0;
+    }
+  }
+
   .footer-link {
     font-family: "Fraunces";
-    color: var(--paper);
+    color: var(--sea);
     padding: 0.25rem 1.5rem 6px;
-    background-color: var(--sea);
-    border: 2px solid var(--paper);
+    background-color: var(--paper);
+    border: 2px solid var(--sea);
     border-radius: 0.75rem;
-    transition: border-color 0.2s ease-in;
+    transition: all 0.2s ease-in;
 
     &:hover {
-      border-color: var(--coral);
+      background-color: var(--sea);
+      color: var(--paper);
     }
   }
 }

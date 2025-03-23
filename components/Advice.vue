@@ -17,7 +17,11 @@ const advice = JSON.parse(response.data._value).slip.advice
 
 <style scoped>
 .advice {
-  padding: 3rem 0;
+  padding: 2rem 0;
+
+  @media (min-width: 720px) {
+    padding: 3rem 0;
+  }
 }
 
 .advice-container {
@@ -26,8 +30,14 @@ const advice = JSON.parse(response.data._value).slip.advice
 }
 
 .advice-content {
-  padding: 1.5rem 3rem;
+  padding: 1rem 1.5rem;
   border: 3px solid var(--coral);
   border-radius: 0.5rem;
+  font-size: 1.25rem;
+
+  @media (min-width: 720px) {
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+  }
 }
 </style>
