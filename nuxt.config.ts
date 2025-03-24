@@ -8,7 +8,24 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon-16x16.png' },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,100,1;1,9..144,100..900,100,1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+        },
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon-16x16.png'
+        },
       ]
     }
   },

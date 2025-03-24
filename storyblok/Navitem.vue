@@ -30,6 +30,11 @@ const path = type === 'url'
   border: 2px solid var(--gray-200);
   border-radius: 1rem;
   color: var(--coral);
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: var(--sea);
+  }
 
   @media (min-width: 720px) {
     color: var(--coral);
@@ -37,6 +42,10 @@ const path = type === 'url'
     background-color: transparent;
     border: none;
     border-radius: 0;
+
+    &:hover {
+      color: var(--sea);
+    }
   }
 }
 </style>

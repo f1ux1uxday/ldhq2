@@ -16,13 +16,12 @@
             @click="toggleNav"
           >
             <i
-              class="pi pi-caret-down"
+              class="pi pi-asterisk"
               :class="{'nav-open': isNavOpen}"
             />
           </button>
         </div>
         <nav
-          v-if="!isPortrait"
           class="header-navigation"
         >
           <StoryblokComponent
@@ -35,7 +34,6 @@
       </div>
     </layout-container>
       <nav
-        v-if="isPortrait"
         class="header-navigation-mobile"
         :class="{'open': isNavOpen}"
       >
@@ -138,16 +136,21 @@ watch(route, () => {
   border: none;
   background: transparent;
   font-size: 1.5rem;
+  cursor: pointer;
   z-index: 4;
+
+  @media (width > 720px) {
+    display: none;
+  }
 
   i {
     color: var(--coral);
-    transform: rotate(0);
+    transform: scale(100%);
     transition: all 0.15s ease-in;
   }
 
   i.nav-open {
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(133%);
   }
 }
 
@@ -156,7 +159,7 @@ watch(route, () => {
   top: 60px;
   display: flex;
   justify-content: end;
-  gap: 1.5rem;
+  gap: 1rem;
   width: calc(100% - (2rem));
   padding: 1.5rem 1rem;
   background-color: transparent;
@@ -164,6 +167,10 @@ watch(route, () => {
   border-bottom: 2px solid var(--gray-200);
   opacity: 0;
   transition: opacity 0.2s ease-in;
+
+  @media (width > 720px) {
+    display: none;
+  }
 
   &.open {
     opacity: 1;
@@ -177,5 +184,9 @@ watch(route, () => {
   background-color: var(--paper);
   border: 2px solid var(--gray-200);
   border-radius: 0.75rem;
+
+  @media (width < 720px) {
+    display: none;
+  }
 }
 </style>

@@ -18,7 +18,6 @@ const story = await useAsyncStoryblok(
 const { getLabel } = await useLabels()
 const seoTitle = `${story.value.content.title} - ${getLabel('siteName')}`
 
-// Can inject a script in here as well - Commento?
 useHead({
   title: seoTitle,
   meta: [
